@@ -7,6 +7,6 @@
 4. Add an API token: Give it a name and for `scope` select `Project: wagtail-external-link-richtext` 
 and follow the instructions on how to use it
 5. Run the following commands in your project folder:
-   1. `python setup.py sdist`
-   2. `python setup.py bdist_wheel`
+   1. `python -m build`
+   2. `twine check dist/*`
    3. `twine upload --repository pypi dist/* --verbose`
