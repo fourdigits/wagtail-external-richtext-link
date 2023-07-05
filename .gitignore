@@ -1,3 +1,4 @@
 wagtail_external_link_richtext.egg-info/*
 dist/*
 build/*
+sandbox/env
