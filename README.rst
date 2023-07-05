@@ -11,8 +11,8 @@ Quick start
     INSTALLED_APPS = [
 
         "...",
+
         "external_link",
-        "...",
 
     ]
 
