@@ -64,3 +64,26 @@ jobs:
         env:
             TWINE_USERNAME: __token__
             TWINE_PASSWORD: ${{ secrets.TESTPYPI_API_TOKEN }} # TODO: Change this when I am sure its working
+
+  github-release:
+    name: Create GitHub release
+    needs: build
+    runs-on: ubuntu-latest
+    steps:
+      - name: Download packages
+        uses: actions/download-artifact@v3
+        with:
+          name: packages-${{ github.ref_name }}
+          path: dist/
+
+      - name: Create release
+        continue-on-error: true
+        uses: ncipollo/release-action@v1
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          tag: ${{ github.ref_name }}
+          name: ${{ github.ref_name }}
+          body: |
+            Release for ${{ github.ref_name }}
+          draft: true
+          artifacts: dist/*
