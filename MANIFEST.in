@@ -1,2 +1,3 @@
-include README.rst
+include README.md
+exclude sandbox/*
 recursive-include external_link/static *
