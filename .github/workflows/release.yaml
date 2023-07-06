@@ -60,7 +60,7 @@ jobs:
 
       - name: Publish package
         run: |
-          python -m twine upload dist/*
+          python -m twine upload --repository testpypi dist/*
         env:
             TWINE_USERNAME: __token__
             TWINE_PASSWORD: ${{ secrets.TESTPYPI_API_TOKEN }} # TODO: Change this when I am sure its working
