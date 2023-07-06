@@ -85,5 +85,5 @@ jobs:
           name: ${{ github.ref_name }}
           body: |
             Release for ${{ github.ref_name }}
-          draft: true
+          draft: false
           artifacts: dist/*
