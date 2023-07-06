@@ -1,0 +1,6 @@
+Django>=4.0,<4.1
+wagtail>=3.0,<3.1
+wagtail-external-link-richtext
+flake8
+pytest
+safety

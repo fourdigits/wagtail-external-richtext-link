@@ -30,7 +30,7 @@ classifiers = [
 ]
 keywords = ["richtext", "external", "link", "wagtail", "newtab", "django"]
 dependencies = [
-    "Django>=3.2,<3.3",
+    "Django>=3.2,<4.1",
     "wagtail>=3.0,<3.1",
 ]
 requires-python = ">=3.8"

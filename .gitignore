@@ -2,3 +2,6 @@ wagtail_external_link_richtext.egg-info/*
 dist/*
 build/*
 sandbox/env
+sandbox/db.sqlite3
+tests/env
+tests/db.sqlite3
