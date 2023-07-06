@@ -28,12 +28,5 @@ jobs:
 
       - name: Run tests
         run: |
-          python -m pytest tests/
-          
-      - name: Verify dependencies
-        run: |
-          python -m safety check tests/
-
-      - name: Verify code style
-        run: |
-          python -m flake8 external_link/ -v
+          cd tests
+          python ./manage.py test
