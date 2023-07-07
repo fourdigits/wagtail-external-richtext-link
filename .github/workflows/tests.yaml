@@ -22,6 +22,8 @@ jobs:
           python -m pip install --upgrade pip
           python -m pip install flake8 flake8-isort flake8-black
           flake8 external_link
+          flake8 test_project/test_app/tests.py
+          flake8 test_project/test_app/models.py
 
   tests:
     name: Run all tests
