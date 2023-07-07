@@ -33,7 +33,14 @@ dependencies = [
     "Django>=3.2",
     "wagtail>=3.0",
 ]
+
 requires-python = ">=3.8"
+
+[project.optional-dependencies]
+test = [
+    "pytest",
+    "pytest-django",
+]
 
 [project.urls]
 Homepage = "https://github.com/fourdigits/wagtail-external-richtext-link"
@@ -45,3 +52,7 @@ target-version = ['py38']
 [tool.isort]
 profile = "black"
 line_length = 119
+
+[tool.pytest.ini_options]
+DJANGO_SETTINGS_MODULE = "test_project.settings.dev"
+python_files = ["tests.py", "*_test.py", "testing/python/*.py"]
