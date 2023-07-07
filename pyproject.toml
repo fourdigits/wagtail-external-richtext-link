@@ -45,13 +45,9 @@ test = [
 [project.urls]
 Homepage = "https://github.com/fourdigits/wagtail-external-richtext-link"
 
-[tool.black]
-line-length = 119
-target-version = ['py38']
-
 [tool.isort]
 profile = "black"
-line_length = 119
+src_paths = ["test_project", "sandbox", "external_link"]
 
 [tool.pytest.ini_options]
 DJANGO_SETTINGS_MODULE = "test_project.settings.dev"
