@@ -38,7 +38,7 @@ Add `"new_tab_link"` to your `RICHTEXT_FEATURES` in your settings:
 RICHTEXT_FEATURES = [
     # ...
     'new_tab_link',
-    # ...
+    'link', #IMPORTANT IT MUST ALWAYS BE ABOVE `link`
 ]
 ```
 
