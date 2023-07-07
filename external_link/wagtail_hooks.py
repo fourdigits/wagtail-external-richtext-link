@@ -24,7 +24,9 @@ def register_new_tab_link_feature(features):
     features.register_editor_plugin(
         "draftail",
         feature_name,
-        draftail_features.EntityFeature(control, js=["js/newtab.js"], css={"all": ["css/newtab_form.css"]}),
+        draftail_features.EntityFeature(
+            control, js=["js/newtab.js"], css={"all": ["css/newtab_form.css"]}
+        ),
     )
 
     # Register the converter rule for the feature to handle database format conversion
@@ -32,7 +34,11 @@ def register_new_tab_link_feature(features):
         "contentstate",
         feature_name,
         {
-            "from_database_format": {"a[target='_blank']": NewTabLinkEntityElementHandler(type_)},
-            "to_database_format": {"entity_decorators": {type_: new_tab_link_entity_decorator}},
+            "from_database_format": {
+                "a[target='_blank']": NewTabLinkEntityElementHandler(type_)
+            },
+            "to_database_format": {
+                "entity_decorators": {type_: new_tab_link_entity_decorator}
+            },
         },
     )
