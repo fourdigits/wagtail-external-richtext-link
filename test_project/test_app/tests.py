@@ -61,11 +61,22 @@ def test_to_database_format():
         }
     )
     actual_database_html = converter.to_database_format(contentstate_json)
-    expected_database_html = (
+    expected_database_html_v1 = (
         "<p "
         'data-block-key="cfw9b">'
         '<a href="http://www.fourdigits.nl" '
         'rel="noopener noreferrer" '
         'target="_blank">Four Digits</a></p>'
     )
-    assert actual_database_html == expected_database_html
+    # From wagtail6.1 the order of the attributes is not guaranteed
+    expected_database_html_v2 = (
+        "<p "
+        'data-block-key="cfw9b">'
+        '<a href="http://www.fourdigits.nl" '
+        'target="_blank" '
+        'rel="noopener noreferrer">Four Digits</a></p>'
+    )
+    assert actual_database_html in {
+        expected_database_html_v1,
+        expected_database_html_v2,
+    }
